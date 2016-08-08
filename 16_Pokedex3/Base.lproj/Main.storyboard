@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="pokemon.ttf">
+            <string>PokemonSolidNormal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,12 +24,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P37-NU-k0a">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZt-bM-fFX">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="NbK-3z-nbU"/>
+                                            <constraint firstAttribute="width" constant="35" id="yes-7y-nL9"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="music"/>
+                                        <connections>
+                                            <action selector="musicButtonPressWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vXx-N6-Gv3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-3f-tAg">
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="BRr-TJ-V8m"/>
+                                    <constraint firstItem="eb6-3f-tAg" firstAttribute="centerX" secondItem="P37-NU-k0a" secondAttribute="centerX" id="GUu-Dq-mcu"/>
+                                    <constraint firstItem="vZt-bM-fFX" firstAttribute="top" secondItem="P37-NU-k0a" secondAttribute="top" constant="20" id="Glz-FS-vOL"/>
+                                    <constraint firstAttribute="trailing" secondItem="vZt-bM-fFX" secondAttribute="trailing" constant="10" id="W5G-LT-Vkh"/>
+                                    <constraint firstItem="eb6-3f-tAg" firstAttribute="centerY" secondItem="P37-NU-k0a" secondAttribute="centerY" constant="8" id="sEH-DD-Bvy"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="0Mv-Jq-OqJ">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="0Mv-Jq-OqJ">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="auQ-bw-uAV"/>
                                 </constraints>
@@ -98,11 +124,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="QHQ-2G-egx" id="a0I-Ub-9Ju"/>
+                        <outlet property="searchBar" destination="0Mv-Jq-OqJ" id="MIv-MC-W9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="92" y="192"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JKR-g8-X0d">
@@ -126,5 +153,6 @@
     <resources>
         <image name="10" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music" width="100" height="100"/>
     </resources>
 </document>
